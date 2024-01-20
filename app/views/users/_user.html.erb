@@ -1,0 +1,6 @@
+<li class="list-group-item" id="<%= dom_id user %>">
+  <%= form_tag(rooms_path, method: :post, remote: true) do %>
+    <%= hidden_field_tag :user_id, user.id %>
+    <%= submit_tag "#{user.name}", class: "list-group-item list-group-item-action #{user.rooms.where(is_common: false).include?(@room) ? 'active' : ''}" %>
+  <% end %>
+</li>

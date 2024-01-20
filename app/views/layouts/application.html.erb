@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TurboChat</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body id="body" class="d-flex flex-column">
+    <header class="mb-4">
+      <div class="container">
+        <%= render partial: 'shared/nav' %>
+      </div>
+    </header>
+    <main class="container">
+      <% if user_signed_in? %>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 mb-4">
+            <%= render partial: 'users/users', locals: { room: @room, common_room: @common_room, users: @users } %>
+          </div>
+          <div class="col-lg-8 col-md-8">
+            <div id="flash">
+              <%= render 'shared/flash' %>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
+    </main>
+    <footer class="footer"></footer>
+
+    <style>
+      <%= ".message-#{current_user&.id}" %> {
+        margin-left: auto;
+      }
+      <%= ".message-block-#{current_user&.id}" %> {
+        background-color: #007bff !important;
+      }
+    </style>
+  </body>
+</html>

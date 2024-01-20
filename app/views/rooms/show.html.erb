@@ -1,0 +1,9 @@
+<div class="bg-dark text-light p-4 my-5">
+  <h2 class="text-center mb-4">
+    <%= room_name_for_user(@room, current_user) %>
+  </h2>
+  <%= render partial: 'messages/messages', locals: { room: @room } %>
+  <div id="new_message_form">
+    <%= render partial: 'messages/new_message_form', locals: { room: @room, message: @message } %>
+  </div>
+</div>

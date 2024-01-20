@@ -1,0 +1,57 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+body {
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+.message {
+  &-block {
+    background: $secondary;
+  }
+
+  width: 35%;
+}
+
+.alert-alert {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+
+.alert-notice {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.turbo-progress-bar {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .message {
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .message {
+    width: 50%;
+  }
+}
+

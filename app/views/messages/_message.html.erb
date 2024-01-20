@@ -1,0 +1,9 @@
+<div class="message message-<%= message.user.id %> mb-4" id="<%= dom_id message %>">
+  <div class="message-block message-block-<%= message.user.id %> rounded-2 mb-2 p-3">
+    <h5 class="name"> <%= message.user.name %> </h6>
+    <%= message.content %>
+  </div>
+  <div class="text-sm">
+    <%= message.created_at.to_formatted_s(:short) %>
+  </div>
+</div>

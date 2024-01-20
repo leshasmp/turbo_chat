@@ -1,0 +1,10 @@
+<h2>Choose chat</h2>
+<%= turbo_stream_from "users" %>
+<ul class="list-group" id="users">
+  <li class="list-group-item">
+    <%= link_to 'Group chat', common_room, class: "list-group-item list-group-item-action #{common_room == room ? 'active' : '' }" %>
+  </li>
+  <% users.each do |user| %>
+    <%= render partial: 'users/user', locals: { user: user } %>
+  <% end %>
+</ul>

@@ -1,0 +1,10 @@
+<% if room.messages.present? %>
+  <%= turbo_stream_from room %>
+  <div class="messages my-4" id="messages">
+    <% room.messages.each do |message| %>
+      <% if message.id.present? && message.content.present? %>
+        <%= render partial: 'messages/message', locals: { message: message } %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
