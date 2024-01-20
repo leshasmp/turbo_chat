@@ -34,7 +34,7 @@ You can access it at http://localhost:3090.
 
 ## Commands
 
-## Control containers
+### Control containers
 ```
 make start # create and start
 make stop # stop
@@ -42,23 +42,23 @@ make restart # restart
 make down # stop and delete
 ```
 
-## Reset database
+### Reset database
 ```
 docker compose exec web make db-reset
 ```
 
-## Running rspec tests
+### Running rspec tests
 ```
 docker compose run --rm web make rspec-test
 docker compose run --rm web make cucumber-test
 ```
 
-## Running lint code
+### Running lint code
 ```
 docker compose run --rm web make lint
 ```
 
-## Debug in container
+### Debug in container
 ```
 docker attach your_web_container
 ```
