@@ -5,6 +5,8 @@ setup:
 	docker compose down
 	docker compose build
 	docker compose up -d
+	docker exec turbo_chat_web yarn install
+	docker exec turbo_chat_web bundle exec rails assets:precompile
 	docker exec turbo_chat_web bin/rails db:drop
 	docker exec turbo_chat_web bin/setup
 
